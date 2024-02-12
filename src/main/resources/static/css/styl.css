@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+body {
+  background-color: black;
+  width: 100%;
+  margin: auto;
+}
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  text-align: center;
+  color: black;
+}
+h3, p {
+  color:black;
+}
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 45px; 
+}
+
+.time_versos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.times {
+  margin: 0; 
+}
+
+.time_versos > * {
+  flex: 0.1; /* Cada elemento ocupa a mesma largura */
+  text-align: center; /* Centraliza o texto */
+}
+
+.time_versos h1:nth-child(1) {
+  flex: 1;
+}
+		
+.time_versos h1:nth-child(2) {
+  text-align: center;
+}
+
+.time_versos h1:nth-child(3) {
+  text-align: start;
+  flex: 1;
+}
+
+
+
+/*
+Form de pesquisa + botão
+*/
+
+.box {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+	display: flex;
+    flex-direction: row; /* Coloca os elementos em linha */
+    justify-content: space-between; /* Espaço entre os elementos */
+    align-items: center; /* Centraliza os elementos verticalmente */
+    margin: 50px 0;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button.btn1 {
+	margin-left: 20px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+
+
+
+
+
+
+/*
+MAIORES ODDS
+*/
+.nome_maiores_odds {
+  padding: 10px; 
+}
+
+.ODDS_container {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px; 
+  margin-bottom: 50px; 
+  width: 400px;
+  height: 160px;
+  background-color: #eceaea;
+  border-radius: 15px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid #eceaea;
+}
+
+.nome_maiores_odds {
+  text-align: center;
+  padding-bottom: 10px; 
+  background: #D9D9D9;
+  border-radius: 25px 25px 0 0;
+}
+
+.odds_maiores div:first-of-type {
+  display: none;
+}
+
+.nome_maiores_odds h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 0;
+  text-align: center;
+}
+
+.vtd, .odds_maiores {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas com largura igual */
+  align-items: center;
+  justify-content: center;
+}
+
+.vtd {
+  margin-top: 15px;	
+}
+
+
+
+.vtd div p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+TODOS OS JOGOS NA CONDIÇÃO CASA/FORA
+*/
+
+.estatisticas_container{
+  
+  margin: 100px 0;
+ 
+}
+.estatisticas_container h1{
+  margin-bottom: 100px; 
+}
+
+.estatisticas_casa, .estatisticas_fora{
+  text-align: center;
+  margin: 0 auto;
+  width: 400px;
+  height: 230px;
+  background-color: #eceaea;
+  border-radius: 25px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid #eceaea; 
+}
+
+.quadros {
+   display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cria duas colunas com a mesma largura */
+    column-gap: 20px; /* Espaço entre as colunas, ajuste conforme necessário */
+    margin-bottom: 50px;
+    width: 1200px;
+    margin: auto;
+}
+
+.col_3 {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 15px;
+}
+.vitoria_estatistica p::after,
+.vitoria_estatistica_fora p::after {
+    content: "";
+    display: block;
+    width: 490%;
+    height: 1px;
+    background-color: #000; /* Cor da linha */
+    position: absolute;
+    bottom: 10;
+    left: 0;
+}
+
+.quant_estatistica p,
+.quant_estatistica_fora p,
+.porcentagem_estatistica p,
+.porcentagem_estatistica_fora p{
+      position: relative;
+      text-align: center;
+}
+
+
+
+.quant_estatistica p::before,
+ .quant_estatistica_fora p::before,
+.porcentagem_estatistica p::before,
+.porcentagem_estatistica_fora p::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -20px; /* Ajuste a posição conforme necessário */
+    top: 40%; /* Mantém a barra vertical centralizada verticalmente */
+    transform: translateY(-50%); /* Corrige a posição vertical */
+    height: 20px; /* Ajuste a altura conforme necessário para tornar a barra mais comprida */
+    border-left: 1px solid #000; /* Adiciona uma linha vertical */
+}
+
+.estatisticas_casa .media_gol,
+.estatisticas_fora .media_gol {
+	display: grid;
+	
+    grid-column: span 2; /* Ocupa as duas colunas disponíveis */
+}
+
+.media_gol {
+	padding-top: 10px;	
+}
+.media_gol span{
+ font-size: 1rem;
+}
+
+
+
+
+
+.media_gol span:last-child::before{
+  content: "⚽";
+  margin-right: 4px;
+  left:-3px;
+}
+
+.vitoria_estatistica, .vitoria_estatistica_fora {
+    text-align: center;
+    position: relative;
+}
+
+.vitoria_estatistica p,
+.porcentagem_estatistica p,
+.quant_estatistica p,
+.vitoria_estatistica_fora p,
+.porcentagem_estatistica_fora p,
+.quant_estatistica_fora p  {
+    margin: 0;
+    padding: 5px;
+    color: black;
+    
+}
+
+.nome_estatistica {
+  text-align: center;
+  padding-top: 10px; 
+  padding-bottom: 10px; 
+  background: #D9D9D9;
+  border-radius: 25px 25px 0 0;
+}
+
+ .nome_estatistica h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 0;
+}
+
+.vitoria_estatistica p,
+.vitoria_estatistica_fora p{
+  text-align: left; /* Adiciona alinhamento à esquerda para os elementos p dentro de .vitoria_estatistica */
+  margin: 0;
+}
+
+.porcentagem_estatistica p,
+.porcentagem_estatistica_fora p{
+  left: 50px;
+}
+
+.quant_estatistica p,
+.quant_estatistica_fora p {
+	right:15px;
+}
+
+
+
+
+
+
+
+
+
+/*
+MAIS INFORMAÇÕES
+*/
+
+.info{
+  
+  margin: 100px 0;
+ 
+}
+.info h1{
+  margin-bottom: 100px; 
+}
+
+.info_container{
+  text-align: center;
+  margin: 0 auto;
+  width: 600px;
+  height: 170px;
+  background-color: #dfdfdf;
+  border-radius: 25px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid #dfdfdf; 
+  padding: 0 15px;
+}
+
+.info_container h3 {
+	padding: 15px;
+	margin-bottom: 0;
+}
+
+.info_linhas {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 15px;
+}
+
+
+
+.info_col p{
+	text-align:start;
+}
+
+.info_col2 p {
+	margin-right: 5px;
+}
+
+.info_col p span{
+	font-size: 0.8rem;
+	color: #8A2BE2;
+}
+
+.info_col p::after{
+    content: "";
+    display: block;
+    width: 95%;
+    height: 1px;
+    background-color: #000; /* Cor da linha */
+    position: absolute;
+    bottom: 10;
+    padding: 0 5px;
+}

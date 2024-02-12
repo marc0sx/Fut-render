@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<link th:href="@{/css/styl.css}" rel="stylesheet">
+<div th:replace="compartilhado/header"></div>
+
+<div class="box">
+	<form th:action="@{/analyze}" method="post">
+		<input type="text" name="url" placeholder="Cole o Link" />
+		<button class="btn1 btn btn-dark" clatype="submit">Analizar</button>
+	</form>
+</div>
+
+<div class="time_versos">
+	<div>
+		<h1 th:text="${times1}" class="times"></h1>
+	</div>
+	<div>
+		<h1 th:if="${exibirConteudo}" class="times">X</h1>
+	</div>
+	<div>
+		<h1 th:text="${times2}" class="times"></h1>
+	</div>
+</div>
+
+ <!-- TABELA DE ODDS -->
+<section th:if="${exibirConteudo}" class="ODDS_container">
+	<div class="nome_maiores_odds">
+		<h3 th:text="${odds}">Maiores ODDS</h3>
+	</div>
+	<div class="cont_dds">
+		<div class="vtd">
+			<div>
+				<p th:text="${times1}">Vitória</p>
+			</div>
+			<div>
+				<p th:text="${emp}">Empate</p>
+			</div>
+			<div>
+				<p th:text="${times2}">Derrota</p>
+			</div>
+		</div>
+		<div class="odds_maiores">
+			<div th:each="odd : ${maioresodds}">
+				<p th:text="${odd}"></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+ <!-- TODOS OS JOGOS NA CONDIÇÃO CASA/FORA  -->
+<section th:if="${exibirConteudo}" class="estatisticas_container">
+	<h1 class="times">TODOS OS JOGOS NA CONDIÇÃO CASA/FORA</h1>
+	<div class="quadros">
+		<div class="estatisticas_casa">
+			<div class="nome_estatistica">
+				<h3 th:text="${times1}">{Timecasa}</h3>
+			</div>
+			<div class="col_3">
+				<div class="vitoria_estatistica">
+					<p th:if="${exibirConteudo}">Vitórias:</p>
+					<p th:if="${exibirConteudo}">Derrotas:</p>
+					<p th:if="${exibirConteudo}">Empates:</p>
+
+				</div>
+				<div class="porcentagem_estatistica">
+					<p th:text="${vitoriasCasa}"></p>
+					<p th:text="${derrotasCasa}"></p>
+					<p th:text="${empatesCasa}"></p>
+				</div>
+				<div class="quant_estatistica">
+					<p th:text="${quantidadeVitoriaCasa}"></p>
+					<p th:text="${quantidadeDerrotaCasa}"></p>
+					<p th:text="${quantidadeEmpateCasa}"></p>
+				</div>
+			</div>
+			<div class="media_gol">
+				<span th:text="${mediaGolsCasa}"></span>
+			</div>
+		</div>
+
+		<div class="estatisticas_fora">
+			<div class="nome_estatistica">
+				<h3 th:text="${times2}">{Timefora}</h3>
+			</div>
+			<div class="col_3">
+				<div class="vitoria_estatistica_fora">
+					<p th:if="${exibirConteudo}">Vitórias:</p>
+					<p th:if="${exibirConteudo}">Derrotas:</p>
+					<p th:if="${exibirConteudo}">Empates:</p>
+				</div>
+				<div class="porcentagem_estatistica_fora">
+					<p th:text="${vitoriasFora}"></p>
+					<p th:text="${derrotasFora}"></p>
+					<p th:text="${empatesFora}"></p>
+				</div>
+				<div class="quant_estatistica_fora">
+					<p th:text="${quantidadeVitoriaFora}"></p>
+					<p th:text="${quantidadeDerrotaFora}"></p>
+					<p th:text="${quantidadeEmpateFora}"></p>
+				</div>
+			</div>
+			<div class="media_gol">
+				<span th:text="${mediaGolsFora}"></span>
+			</div>
+</section>
+
+
+ <!-- ULTIMOS 10 JOGOS EM TODAS AS COMPETIÇÕES -->
+<section th:if="${exibirConteudo}" class="estatisticas_container">
+	<h1 class="times">ULTIMOS 10 JOGOS EM TODAS AS COMPETIÇÕES</h1>
+	<div class="quadros">
+		<div class="estatisticas_casa">
+			<div class="nome_estatistica">
+				<h3 th:text="${times1}">{Timecasa}</h3>
+			</div>
+			<div class="col_3">
+				<div class="vitoria_estatistica">
+					<p th:if="${exibirConteudo}">Vitórias:</p>
+					<p th:if="${exibirConteudo}">Derrotas:</p>
+					<p th:if="${exibirConteudo}">Empates:</p>
+
+				</div>
+				<div class="porcentagem_estatistica">
+					<p th:text="${vitoriasCasaPorcentagem}"></p>
+					<p th:text="${derrotasCasaPorcentagem}"></p>
+					<p th:text="${empatesCasaPorcentagem}"></p>
+				</div>
+				<div class="quant_estatistica">
+					<p th:text="${vitoriasTime1}"></p>
+					<p th:text="${derrotasTime1}"></p>
+					<p th:text="${empatesTime1}"></p>
+				</div>
+			</div>
+			<div class="media_gol">
+				<span  th:text="${mediaGolsTime1}"></span>
+			</div>
+		</div>
+
+		<div class="estatisticas_fora">
+			<div class="nome_estatistica">
+				<h3 th:text="${times2}">{Timefora}</h3>
+			</div>
+			<div class="col_3">
+				<div class="vitoria_estatistica_fora">
+					<p th:if="${exibirConteudo}">Vitórias:</p>
+					<p th:if="${exibirConteudo}">Derrotas:</p>
+					<p th:if="${exibirConteudo}">Empates:</p>
+				</div>
+				<div class="porcentagem_estatistica_fora">
+					<p th:text="${vitoriasForaPorcentagem}"></p>
+					<p th:text="${derrotasForaPorcentagem}"></p>
+					<p th:text="${empatesForaPorcentagem}"></p>
+				</div>
+				<div class="quant_estatistica_fora">
+					<p th:text="${vitoriasTime2}"></p>
+					<p th:text="${derrotasTime2}"></p>
+					<p th:text="${empatesTime2}"></p>
+				</div>
+			</div>
+			<div class="media_gol">
+				<span th:text="${mediaGolsTime2}"></span>
+			</div>
+</section>
+
+
+<section class="info" th:if="${exibirConteudo}">
+	<h1 class="times">INFORMAÇÕES ADICIONAIS</h1>
+	<div class="info_container">
+		<div>
+			<h3>Soma das medias de gols:</h3>
+			<div class="info_linhas">
+				<div class="info_col">
+					<p>Ultimos jogos <span>competições atual</span></p>
+					<p>Ultimos 10 jogos <span>todas as competições</span></p>
+				</div>
+				<div class="info_col2">
+					<p  th:text="${somaMediasTodosJogos}" >10.03</p>
+					<p th:text="${somaMedias}">10.03</p>
+				</div>
+			</div>	
+		</div>
+	</div>
+</section>
+
+
+
+<div th:replace="compartilhado/footer"></div>

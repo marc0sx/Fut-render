@@ -1,0 +1,61 @@
+<div th:replace="compartilhado/header"></div>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800">Clientes</h1>
+	<p class="mb-4">Aqui está a lista de todos os nossos clientes.</p>
+
+	<!-- DataTales Example -->
+	<div class="card shadow mb-4">
+		<div class="card-header py-3">
+			<a href="/clientes/new" class="btn btn-primary" style="margin-right: 20px;">Adicionar</a>
+			<h6 class="m-0 font-weight-bold text-primary" style="display: inline-block;">Lista de clientes</h6>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nome</th>
+							<th>Email</th>
+							<th>Data Cadastrado</th>
+							<th>Data Fim</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Id</th>
+							<th>Nome</th>
+							<th>Email</th>
+							<th>Data Cadastrado</th>
+							<th>Data Fim</th>
+							<th>Status</th>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr th:each="cliente: ${clientes}">
+							<td th:text="${cliente.id}"></td>
+							<td th:text="${cliente.nome}"></td>
+							<td th:text="${cliente.email}"></td>
+							<td th:text="${#temporals.format(cliente.data_cadastro, 'dd-MM-yyyy HH:mm:ss')}"></td>
+							<td th:text="${#temporals.format(cliente.data_fim, 'dd-MM-yyyy')}"></td>
+							<td>On</td>
+							<td><a th:href="@{'/clientes/' + ${cliente.id}}" class="btn btn-warning">Alterar</a></td>
+							<td><a href="#"
+									th:onclick="'if(confirm(\'Tem certeza que deseja excluir?\')){ window.location.href = \'' + @{/clientes/{id}(id=${cliente.id})} + '/excluir\'}'"
+									class="btn btn-danger">Excluir</a></td>
+						</tr>
+
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- /.container-fluid -->
+<div th:replace="compartilhado/footer"></div>
