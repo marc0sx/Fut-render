@@ -17,7 +17,7 @@ public class HomeController {
 	public String adm(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
 		model.addAttribute("nome", com.futanalytcs.futanalytcs.servico.CookieService.getCookie(request, "nomeUsuario"));
 		
-		return "/index";
+		return "/index.html";
 	}
 	
 	
