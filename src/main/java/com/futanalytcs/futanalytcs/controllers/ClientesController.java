@@ -34,7 +34,7 @@ public class ClientesController {
 	
 	@GetMapping("/clientes/new")
 	public String clienteNew() {
-		return "/clientes/clienteNew";
+		return "clientes/clienteNew";
 	}
 	
 	@PostMapping("/clientes/criar")
