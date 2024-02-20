@@ -48,7 +48,7 @@ public class ClientesController {
 		Optional<Cliente> client = repo.findById(id);
 		try {
 			model.addAttribute("cliente", client.get());
-		} catch(Exception err){return "redirect:clientes";}
+		} catch(Exception err){return "redirect:/clientes";}
 				
 		return "clientes/editar";
 	}
@@ -56,16 +56,16 @@ public class ClientesController {
 	@PostMapping("/clientes/{id}/alterar")
 	public String alterar(@PathVariable int id, Cliente cliente) {
 		if (!repo.existsById(id)){
-		return "redirect:clientes";
+		return "redirect:/clientes";
 		}
 		repo.save(cliente);
 				
-		return "redirect:clientes";
+		return "redirect:/clientes";
 	}
 	
 	@GetMapping("/clientes/{id}/excluir")
 	public String excluir(@PathVariable int id) {
 		repo.deleteById(id);
-		return "redirect:clientes";
+		return "redirect:/clientes";
 	}
 }
