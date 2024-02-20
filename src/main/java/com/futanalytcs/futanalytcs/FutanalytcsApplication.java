@@ -27,9 +27,9 @@ public class FutanalytcsApplication {
 	class AnalytControllerFut {
 		private static final Logger logger = LoggerFactory.getLogger(AnalytControllerFut.class);
 
-		@RequestMapping("/index")
+		@RequestMapping("/")
 		public String index() {
-			return "index.html";
+			return "index";
 		}
 
 		@PostMapping("/analyze")
