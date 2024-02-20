@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class HomeController {
-	@GetMapping("/")
+	@GetMapping("/index")
 	public String adm(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
 		model.addAttribute("nome", com.futanalytcs.futanalytcs.servico.CookieService.getCookie(request, "nomeUsuario"));
 		
