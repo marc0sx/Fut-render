@@ -29,7 +29,7 @@ public class FutanalytcsApplication {
 
 		@RequestMapping("/index")
 		public String index() {
-			return "index";
+			return "index.html";
 		}
 
 		@PostMapping("/analyze")
