@@ -40,7 +40,7 @@ public class ClientesController {
 	@PostMapping("/clientes/criar")
 	public String criar(Cliente cliente) {
 		repo.save(cliente);
-		return "redirect:clientes";
+		return "redirect:/clientes";
 	}
 	
 	@GetMapping("/clientes/{id}")
