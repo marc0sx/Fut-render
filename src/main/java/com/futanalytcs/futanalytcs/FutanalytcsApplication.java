@@ -27,7 +27,7 @@ public class FutanalytcsApplication {
 	class AnalytControllerFut {
 		private static final Logger logger = LoggerFactory.getLogger(AnalytControllerFut.class);
 
-		@RequestMapping("/")
+		@RequestMapping("/index")
 		public String index() {
 			return "index";
 		}
